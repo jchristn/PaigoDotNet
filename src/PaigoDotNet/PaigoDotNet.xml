@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PaigoDotNet</name>
+    </assembly>
+    <members>
+        <member name="T:PaigoDotNet.AuthenticationRequest">
+            <summary>
+            Authentication request.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.AuthenticationRequest.Audience">
+            <summary>
+            Audience URL.  By default use https://qnonyh1pc7.execute-api.us-east-1.amazonaws.com.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.AuthenticationRequest.GrantType">
+            <summary>
+            Grant type.  By default use client_credentials.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.AuthenticationRequest.ClientId">
+            <summary>
+            Client ID.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.AuthenticationRequest.ClientSecret">
+            <summary>
+            Client secret.
+            </summary>
+        </member>
+        <member name="M:PaigoDotNet.AuthenticationRequest.#ctor">
+            <summary>
+            Instantiate.
+            </summary>
+        </member>
+        <member name="T:PaigoDotNet.AuthenticationResponse">
+            <summary>
+            Authentication response.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.AuthenticationResponse.AccessToken">
+            <summary>
+            Access token.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.AuthenticationResponse.ExpirationMilliseconds">
+            <summary>
+            Number of seconds in which the token expires.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.AuthenticationResponse.TimestampUtc">
+            <summary>
+            Timestamp at which the response was received.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.AuthenticationResponse.TokenType">
+            <summary>
+            Token type.
+            </summary>
+        </member>
+        <member name="M:PaigoDotNet.AuthenticationResponse.#ctor">
+            <summary>
+            Instantiate.
+            </summary>
+        </member>
+        <member name="T:PaigoDotNet.CollectUsageRequest">
+            <summary>
+            Collect usage request.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.CollectUsageRequest.DimensionId">
+            <summary>
+            Dimension ID.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.CollectUsageRequest.Timestamp">
+            <summary>
+            Timestamp in UTC time.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.CollectUsageRequest.CustomerId">
+            <summary>
+            Customer ID.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.CollectUsageRequest.Value">
+            <summary>
+            Record value.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.CollectUsageRequest.Metadata">
+            <summary>
+            Metadata.
+            </summary>
+        </member>
+        <member name="M:PaigoDotNet.CollectUsageRequest.#ctor">
+            <summary>
+            Instantiate.
+            </summary>
+        </member>
+        <member name="T:PaigoDotNet.ConsumptionUnit">
+            <summary>
+            Dimension.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.ConsumptionUnit.Unit">
+            <summary>
+            Unit.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.ConsumptionUnit.Type">
+            <summary>
+            Type.
+            </summary>
+        </member>
+        <member name="M:PaigoDotNet.ConsumptionUnit.#ctor">
+            <summary>
+            Instantiate.
+            </summary>
+        </member>
+        <member name="T:PaigoDotNet.Dimension">
+            <summary>
+            Dimension.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.DimensionName">
+            <summary>
+            Dimension name.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.ConsumptionUnit">
+            <summary>
+            Consumption unit.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.UsageIncrement">
+            <summary>
+            Usage increment.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.UsageEntitlement">
+            <summary>
+            Usage entitlement.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.AggregationInterval">
+            <summary>
+            Aggregation interval.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.AggregationMethod">
+            <summary>
+            Aggregation method.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.Id">
+            <summary>
+            Dimension ID.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.Measurement">
+            <summary>
+            Measurement.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.Rounding">
+            <summary>
+            Rounding.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.OverageAllowed">
+            <summary>
+            Overage allowed.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.ConsumptionPrice">
+            <summary>
+            Consumption price.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.SampleType">
+            <summary>
+            Sample type.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.Schedule">
+            <summary>
+            Schedule.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.Metadata">
+            <summary>
+            Metadata.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.Tiers">
+            <summary>
+            Tiers.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Dimension.TiersGroupByMetadata">
+            <summary>
+            Tiers group by metadata.
+            </summary>
+        </member>
+        <member name="M:PaigoDotNet.Dimension.#ctor">
+            <summary>
+            Instantiate.
+            </summary>
+        </member>
+        <member name="T:PaigoDotNet.Measurement">
+            <summary>
+            Measurement.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Measurement.Mode">
+            <summary>
+            Measurement mode.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Measurement.Configuration">
+            <summary>
+            Measurement configuration.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Measurement.Name">
+            <summary>
+            Measurement name.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Measurement.Id">
+            <summary>
+            Measurement ID.
+            </summary>
+        </member>
+        <member name="M:PaigoDotNet.Measurement.#ctor">
+            <summary>
+            Instantiate.
+            </summary>
+        </member>
+        <member name="T:PaigoDotNet.Offering">
+            <summary>
+            Offering.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.OfferingVisibility">
+            <summary>
+            Offering visibility.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.OfferingType">
+            <summary>
+            Offering type.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.BillingCycle">
+            <summary>
+            Billing cycle.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.Currency">
+            <summary>
+            Currency.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.DimensionOverrides">
+            <summary>
+            Dimension overrides.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.Id">
+            <summary>
+            ID.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.Dimensions">
+            <summary>
+            Dimensions.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.PrepaidCredit">
+            <summary>
+            Prepaid credit.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.MinimumCharge">
+            <summary>
+            Minimum charge.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.TopUpAmount">
+            <summary>
+            Top up amount.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.TopUpThreshold">
+            <summary>
+            Top up threshold.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.SubscriptionPrice">
+            <summary>
+            Subscription price.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.FreeTrialLength">
+            <summary>
+            Free trial length.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.Name">
+            <summary>
+            Name.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.Offering.Metadata">
+            <summary>
+            Metadata.
+            </summary>
+        </member>
+        <member name="M:PaigoDotNet.Offering.#ctor">
+            <summary>
+            Instantiate.
+            </summary>
+        </member>
+        <member name="T:PaigoDotNet.PaigoClient">
+            <summary>
+            Paigo client.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.PaigoClient.Logger">
+            <summary>
+            Method to invoke to send log messages.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.PaigoClient.ApiEndpoint">
+            <summary>
+            API endpoint URL.  
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.PaigoClient.AuthEndpoint">
+            <summary>
+            Authentication endpoint URL.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.PaigoClient.AuthenticationDetails">
+            <summary>
+            Authentication details, if authenticated.
+            </summary>
+        </member>
+        <member name="M:PaigoDotNet.PaigoClient.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Instantiate the Paigo client.  
+            For the endpoint URL, use https://api.prod.paigo.tech/ for production.
+            
+            </summary>
+            <param name="clientId">Client ID, provided by Paigo.</param>
+            <param name="clientSecret">Client secret, provided by Paigo.</param>
+            <param name="apiEndpoint">API endpoint URL.</param>
+            <param name="authEndpoint">Authentication endpoint URL.</param>
+        </member>
+        <member name="M:PaigoDotNet.PaigoClient.Authenticate(System.Threading.CancellationToken)">
+            <summary>
+            Authenticate.
+            </summary>
+            <param name="token">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:PaigoDotNet.PaigoClient.GetDimensions(System.Threading.CancellationToken)">
+            <summary>
+            Get dimensions.
+            </summary>
+            <param name="token">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:PaigoDotNet.PaigoClient.GetOfferings(System.Threading.CancellationToken)">
+            <summary>
+            Get offerings.
+            </summary>
+            <param name="token">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:PaigoDotNet.PaigoClient.CollectUsage(PaigoDotNet.CollectUsageRequest,System.Threading.CancellationToken)">
+            <summary>
+            Collect usage.
+            </summary>
+            <param name="usageRequest">Usage request.</param>
+            <param name="token">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:PaigoDotNet.PaigoDataResponse`1">
+            <summary>
+            Paigo data response.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.PaigoDataResponse`1.Message">
+            <summary>
+            Message.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.PaigoDataResponse`1.Data">
+            <summary>
+            Data.
+            </summary>
+        </member>
+        <member name="M:PaigoDotNet.PaigoDataResponse`1.#ctor">
+            <summary>
+            Instantiate.
+            </summary>
+        </member>
+    </members>
+</doc>
