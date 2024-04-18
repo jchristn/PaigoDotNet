@@ -5,15 +5,52 @@
 		<ApplicationIcon>icon.ico</ApplicationIcon>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<DocumentationFile>./PaigoDotNet.xml</DocumentationFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>PaigoDotNet</Title>
+		<Authors>Joel Christner</Authors>
+		<Company>Joel Christner</Company>
+		<Description>Simple C# library for using Paigo.</Description>
+		<Copyright>(c)2024 Joel Christner</Copyright>
+		<PackageProjectUrl>https://github.com/jchristn/PaigoDotNet</PackageProjectUrl>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/jchristn/PaigoDotNet</RepositoryUrl>
+		<RepositoryType>github</RepositoryType>
+		<PackageReleaseNotes>Initial release</PackageReleaseNotes>
+		<Version>1.0.0</Version>
+		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Include="icon.ico" />
+		<Content Include="icon.ico" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="RestWrapper" Version="3.0.19" />
-	  <PackageReference Include="SerializationHelper" Version="1.0.2" />
+		<None Include="..\..\Assets\icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\LICENSE.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="RestWrapper" Version="3.0.19" />
+		<PackageReference Include="SerializationHelper" Version="1.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="PaigoDotNet.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
 
 </Project>
