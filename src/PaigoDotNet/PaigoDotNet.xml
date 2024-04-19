@@ -326,7 +326,7 @@
         </member>
         <member name="T:PaigoDotNet.PaigoClient">
             <summary>
-            Paigo client.
+            Paigo client.  Paigo's API documentation can be found at: http://www.api.docs.paigo.tech/
             </summary>
         </member>
         <member name="P:PaigoDotNet.PaigoClient.Logger">
@@ -347,6 +347,11 @@
         <member name="P:PaigoDotNet.PaigoClient.AuthenticationDetails">
             <summary>
             Authentication details, if authenticated.
+            </summary>
+        </member>
+        <member name="P:PaigoDotNet.PaigoClient.IsAuthenticated">
+            <summary>
+            Boolean to indicate if the client is authenticated.
             </summary>
         </member>
         <member name="M:PaigoDotNet.PaigoClient.#ctor(System.String,System.String,System.String,System.String)">

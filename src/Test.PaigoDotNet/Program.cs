@@ -40,6 +40,9 @@
                     case "auth":
                         Authenticate();
                         break;
+                    case "isauth":
+                        Console.WriteLine("Authenticated: " + _Client.IsAuthenticated);
+                        break;
                     case "get dim":
                         GetDimensions();
                         break;
@@ -61,6 +64,7 @@
             Console.WriteLine("  ?               Help, this menu");
             Console.WriteLine("  cls             Clear the screen");
             Console.WriteLine("  auth            Authenticate");
+            Console.WriteLine("  isauth          Check if client is authenticated");
             Console.WriteLine("  get dim         Retrieve all dimensions");
             Console.WriteLine("  get offerings   Retrieve all offerings");
             Console.WriteLine("  collect usage   Collect usage data");
@@ -142,6 +146,8 @@
             try
             {
                 _Client.CollectUsage(req).Wait();
+                Console.WriteLine("Success");
+                Console.WriteLine("");
             }
             catch (Exception e)
             {

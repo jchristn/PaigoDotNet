@@ -11,7 +11,7 @@
     using SerializationHelper;
 
     /// <summary>
-    /// Paigo client.
+    /// Paigo client.  Paigo's API documentation can be found at: http://www.api.docs.paigo.tech/
     /// </summary>
     public class PaigoClient
     {
@@ -52,6 +52,21 @@
             get
             {
                 return _Authentication;
+            }
+        }
+
+        /// <summary>
+        /// Boolean to indicate if the client is authenticated.
+        /// </summary>
+        public bool IsAuthenticated
+        {
+            get
+            {
+                if (_Authentication == null) return false;
+                if (String.IsNullOrEmpty(_Authentication.AccessToken)) return false;
+                DateTime now = DateTime.UtcNow;
+                DateTime exp = _Authentication.TimestampUtc.AddMilliseconds(_Authentication.ExpirationMilliseconds);
+                return (exp > now);
             }
         }
 
@@ -153,8 +168,7 @@
         /// <returns>Task.</returns>
         public async Task<List<Dimension>> GetDimensions(CancellationToken token = default)
         {
-            if (!IsAuthenticated()) throw new AuthenticationException("Please authenticate prior to invoking this API.");
-            if (IsExpired()) throw new AuthenticationException("The existing authentication material has expired; please re-authenticate.");
+            if (!IsAuthenticated) throw new AuthenticationException("Please authenticate prior to invoking this API.");
 
             string url = ApiEndpoint + "dimensions";
 
@@ -191,8 +205,7 @@
         /// <returns>Task.</returns>
         public async Task<List<Offering>> GetOfferings(CancellationToken token = default)
         {
-            if (!IsAuthenticated()) throw new AuthenticationException("Please authenticate prior to invoking this API.");
-            if (IsExpired()) throw new AuthenticationException("The existing authentication material has expired; please re-authenticate.");
+            if (!IsAuthenticated) throw new AuthenticationException("Please authenticate prior to invoking this API.");
 
             string url = ApiEndpoint + "offerings";
 
@@ -230,8 +243,7 @@
         /// <returns>Task.</returns>
         public async Task CollectUsage(CollectUsageRequest usageRequest, CancellationToken token = default)
         {
-            if (!IsAuthenticated()) throw new AuthenticationException("Please authenticate prior to invoking this API.");
-            if (IsExpired()) throw new AuthenticationException("The existing authentication material has expired; please re-authenticate.");
+            if (!IsAuthenticated) throw new AuthenticationException("Please authenticate prior to invoking this API.");
             if (usageRequest == null) throw new ArgumentNullException(nameof(usageRequest));
 
             string url = ApiEndpoint + "usage";
@@ -277,23 +289,7 @@
         {
             return (status >= 200 && status <= 299);
         }
-
-        private bool IsAuthenticated()
-        {
-            if (_Authentication == null) return false;
-            if (String.IsNullOrEmpty(_Authentication.AccessToken)) return false;
-            return true;
-        }
-
-        private bool IsExpired()
-        {
-            if (_Authentication == null) return true;
-            if (String.IsNullOrEmpty(_Authentication.AccessToken)) return true;
-            DateTime now = DateTime.UtcNow;
-            DateTime exp = _Authentication.TimestampUtc.AddMilliseconds(_Authentication.ExpirationMilliseconds);
-            return (exp < now);
-        }
-
+         
         #endregion
     }
 }
